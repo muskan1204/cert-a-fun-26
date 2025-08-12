@@ -220,6 +220,13 @@ export const CertificateGenerator = () => {
                         : "border-border bg-card/50 hover:border-primary/50 hover:bg-card/80"
                     }`}
                   >
+                    {/* Most Popular Tag */}
+                    {design.id === "academic-white" && (
+                      <div className="absolute -top-2 -right-2 bg-gradient-to-r from-accent to-primary text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg z-10">
+                        Most Popular
+                      </div>
+                    )}
+                    
                     <div className="flex items-start space-x-3">
                       <div className={`w-3 h-3 rounded-full mt-1 transition-colors duration-300 ${
                         selectedDesign?.id === design.id

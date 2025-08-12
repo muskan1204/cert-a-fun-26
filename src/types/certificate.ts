@@ -13,16 +13,16 @@ export interface CertificateDesign {
 
 export const CERTIFICATE_DESIGNS: CertificateDesign[] = [
   {
-    id: "classic-black",
-    name: "Classic Black",
-    description: "Professional black background with gold accents",
-    preview: "🖤 Elegant & Professional"
-  },
-  {
     id: "academic-white", 
     name: "Academic Degree",
     description: "Traditional university diploma style with white background",
     preview: "🎓 University Style"
+  },
+  {
+    id: "classic-black",
+    name: "Classic Black",
+    description: "Professional black background with gold accents",
+    preview: "🖤 Elegant & Professional"
   },
   {
     id: "modern-gradient",
