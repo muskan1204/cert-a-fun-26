@@ -77,9 +77,9 @@ const Home = () => {
         <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-2">
-              <Laugh className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                fake skills
+              <span className="text-2xl sm:text-3xl">😊</span>
+              <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                fakeskills
               </h1>
             </div>
             <Button 
@@ -275,8 +275,8 @@ const Home = () => {
       <footer className="py-8 px-4 border-t bg-card/50">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Laugh className="h-6 w-6 text-primary" />
-            <span className="text-lg font-semibold">fake skills</span>
+            <span className="text-xl">😊</span>
+            <span className="text-lg font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">fakeskills</span>
           </div>
           <p className="text-muted-foreground">
             Adding humor to professional profiles since today. All certificates are for entertainment purposes only.
