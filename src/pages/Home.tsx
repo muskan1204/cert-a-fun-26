@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 import { Award, Download, Palette, Zap, Users, Shield, Briefcase, Smile, Laugh } from "lucide-react";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
-import certTemplate1 from "@/assets/cert-template-1.jpg";
-import certTemplate2 from "@/assets/cert-template-2.jpg";
-import certTemplate3 from "@/assets/cert-template-3.jpg";
+import memeCert1 from "@/assets/meme-cert-1.jpg";
+import memeCert2 from "@/assets/meme-cert-2.jpg";
+import memeCert3 from "@/assets/meme-cert-3.jpg";
 import { CERTIFICATE_TYPES } from "@/types/certificate";
 
 const Home = () => {
@@ -47,19 +47,19 @@ const Home = () => {
 
   const sampleCertificates = [
     {
-      image: certTemplate1,
-      title: "Professional Look",
-      description: "Funny certificates that still look professional"
+      image: memeCert1,
+      title: "Classic Design",
+      description: "Professional meme certificates with elegant styling"
     },
     {
-      image: certTemplate2, 
-      title: "Clean Design",
-      description: "Simple and elegant for any social platform"
+      image: memeCert2, 
+      title: "Modern Layout",
+      description: "Contemporary certificate designs for your funny achievements"
     },
     {
-      image: certTemplate3,
-      title: "Eye-Catching",
-      description: "Stand out from the crowd with humor"
+      image: memeCert3,
+      title: "Premium Quality",
+      description: "High-quality templates that stand out on social media"
     }
   ];
 
