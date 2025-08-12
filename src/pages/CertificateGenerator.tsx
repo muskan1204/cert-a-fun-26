@@ -244,10 +244,10 @@ export const CertificateGenerator = () => {
                         <div className="text-xs text-muted-foreground mt-1">
                           {design.description}
                         </div>
-                        <div className={`text-xs mt-1 font-medium transition-colors duration-300 ${
+                        <div className={`text-xs mt-1 font-medium transition-all duration-300 ${
                           selectedDesign?.id === design.id
-                            ? "text-primary"
-                            : "text-accent-foreground group-hover:text-primary"
+                            ? "bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+                            : "text-accent-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text group-hover:text-transparent"
                         }`}>
                           {design.preview}
                         </div>
