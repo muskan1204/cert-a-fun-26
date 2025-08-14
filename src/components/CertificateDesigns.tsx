@@ -29,10 +29,13 @@ export const generateClassicBlackDesign = (name: string, certificateType: Certif
   ctx.lineWidth = 3;
   ctx.strokeRect(60, 60, 1480, 1080);
 
-  // Text rendering helper
+  // Enhanced text rendering helper with better font handling
   const drawProText = (text: string, x: number, y: number, fillColor: string | CanvasGradient, size: number = 24, weight: string = "normal", effects: any = {}) => {
     ctx.save();
-    ctx.font = `${weight} ${size}px Arial`;
+    // Better font fallback chain
+    ctx.font = `${weight} ${size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
     
     if (effects.glow) {
       ctx.shadowColor = effects.glow;
@@ -50,18 +53,17 @@ export const generateClassicBlackDesign = (name: string, certificateType: Certif
     ctx.fillStyle = fillColor;
     ctx.fillText(text, x, y);
     ctx.restore();
+
   };
 
-  // Enhanced main header
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
+  // Enhanced main header with simplified emojis
   ctx.shadowColor = "transparent";
   
   const headerGradient = ctx.createLinearGradient(0, 150, 0, 200);
   headerGradient.addColorStop(0, "#ffffff");
   headerGradient.addColorStop(1, "#cccccc");
   
-  drawProText("🏆 CERTIFICATE OF ACHIEVEMENT 🏆", 800, 180, headerGradient, 70, "900", {
+  drawProText("CERTIFICATE OF ACHIEVEMENT", 800, 180, headerGradient, 70, "900", {
     glow: "rgba(255, 255, 255, 0.8)",
     stroke: "#000000",
     strokeWidth: 2
@@ -96,18 +98,18 @@ export const generateClassicBlackDesign = (name: string, certificateType: Certif
     });
 
     // Enhanced achievement level
-    drawProText("🎯 ACHIEVEMENT LEVEL: ABSOLUTELY LEGENDARY 🎯", 800, 780, "#FFD700", 32, "800", {
+    drawProText("ACHIEVEMENT LEVEL: ABSOLUTELY LEGENDARY", 800, 780, "#FFD700", 32, "800", {
       glow: "rgba(255, 215, 0, 0.9)",
       stroke: "#000000",
       strokeWidth: 2
     });
 
     // Enhanced funny quote
-    drawProText("\"Because life is too short to be serious all the time!\" 😄", 800, 840, "#ffffff", 28, "600");
+    drawProText("\"Because life is too short to be serious all the time!\"", 800, 840, "#ffffff", 28, "600");
   }
 
   // Enhanced skill points
-  drawProText("💪 SKILL POINTS EARNED: 9999+ | 🏅 HUMOR LEVEL: MAXIMUM", 800, 900, "#00FF7F", 26, "700");
+  drawProText("SKILL POINTS EARNED: 9999+ | HUMOR LEVEL: MAXIMUM", 800, 900, "#00FF7F", 26, "700");
 
   // Enhanced footer
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -117,10 +119,10 @@ export const generateClassicBlackDesign = (name: string, certificateType: Certif
   });
   
   ctx.textAlign = "left";
-  drawProText(`📅 Issued: ${currentDate}`, 150, 1020, "#ffffff", 28, "700");
+  drawProText(`Issued: ${currentDate}`, 150, 1020, "#ffffff", 28, "700");
   
   ctx.textAlign = "right";
-  drawProText(`✅ Certified by: ${SITE_NAME} 🎉`, 1450, 1020, "#ffffff", 28, "700");
+  drawProText(`Certified by: ${SITE_NAME}`, 1450, 1020, "#ffffff", 28, "700");
 };
 
 // Academic White Design (university diploma style) - Enhanced Quality
@@ -166,7 +168,8 @@ export const generateAcademicWhiteDesign = (name: string, certificateType: Certi
 
   const drawEnhancedText = (text: string, x: number, y: number, color: string, size: number, weight: string = "normal", font: string = "Times New Roman", effects: any = {}) => {
     ctx.save();
-    ctx.font = `${weight} ${size}px ${font}`;
+    // Better font fallback for academic style
+    ctx.font = `${weight} ${size}px "Times New Roman", Georgia, serif`;
     ctx.fillStyle = color;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -190,10 +193,10 @@ export const generateAcademicWhiteDesign = (name: string, certificateType: Certi
     ctx.restore();
   };
 
-  // Enhanced University-style header
-  drawEnhancedText("🎓 UNIVERSITY OF COMEDY 🎓", 800, 180, "#1A202C", 56, "900", "Times New Roman", { shadow: true, stroke: "rgba(255,255,255,0.5)", strokeWidth: 2 });
+  // Enhanced University-style header without problematic emojis
+  drawEnhancedText("UNIVERSITY OF COMEDY", 800, 180, "#1A202C", 56, "900", "Times New Roman", { shadow: true, stroke: "rgba(255,255,255,0.5)", strokeWidth: 2 });
   drawEnhancedText("Department of Hilarious Studies & Advanced Meme Research", 800, 230, "#2D3748", 24, "700", "Times New Roman", { shadow: true });
-  drawEnhancedText("📚 \"Where Learning Meets Laughter\" 📚", 800, 270, "#4A5568", 20, "600", "Times New Roman");
+  drawEnhancedText("\"Where Learning Meets Laughter\"", 800, 270, "#4A5568", 20, "600", "Times New Roman");
 
   // Enhanced decorative elements
   const drawOrnament = (x: number, y: number) => {
@@ -246,13 +249,13 @@ export const generateAcademicWhiteDesign = (name: string, certificateType: Certi
     });
     
     // Enhanced funny academic credentials with better contrast
-    drawEnhancedText("🏅 GRADE: A++ (Maximum Hilarity Achieved)", 800, 760, "#C53030", 22, "700", "Times New Roman", { shadow: true });
-    drawEnhancedText("🎯 GPA: 4.20/4.20 (Perfect Score in Fun)", 800, 800, "#2F855A", 22, "700", "Times New Roman", { shadow: true });
+    drawEnhancedText("GRADE: A++ (Maximum Hilarity Achieved)", 800, 760, "#C53030", 22, "700", "Times New Roman", { shadow: true });
+    drawEnhancedText("GPA: 4.20/4.20 (Perfect Score in Fun)", 800, 800, "#2F855A", 22, "700", "Times New Roman", { shadow: true });
   }
 
   // Enhanced academic seals and signatures area
   drawEnhancedText("with all the rights, privileges, and unlimited dad joke permissions", 800, 860, "#1A202C", 22, "600", "Times New Roman", { shadow: true });
-  drawEnhancedText("💼 \"Now go forth and spread joy to the world!\" 🌍", 800, 900, "#6B46C1", 22, "700", "Times New Roman", { shadow: true });
+  drawEnhancedText("\"Now go forth and spread joy to the world!\"", 800, 900, "#6B46C1", 22, "700", "Times New Roman", { shadow: true });
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     year: "numeric",
@@ -262,14 +265,14 @@ export const generateAcademicWhiteDesign = (name: string, certificateType: Certi
 
   // Enhanced signature lines with better positioning
   ctx.textAlign = "left";
-  drawEnhancedText("🎭 Dr. Chuckles McFunnyface", 240, 980, "#1A202C", 20, "700", "Times New Roman", { shadow: true });
+  drawEnhancedText("Dr. Chuckles McFunnyface", 240, 980, "#1A202C", 20, "700", "Times New Roman", { shadow: true });
   drawEnhancedText("Dean of Comedy & Chief Humor Officer", 240, 1010, "#2D3748", 16, "600", "Times New Roman");
-  drawEnhancedText(`📅 Date: ${currentDate}`, 240, 1040, "#1A202C", 18, "600", "Times New Roman");
+  drawEnhancedText(`Date: ${currentDate}`, 240, 1040, "#1A202C", 18, "600", "Times New Roman");
   
   ctx.textAlign = "right";
-  drawEnhancedText(`🏛️ ${SITE_NAME}`, 1360, 980, "#1A202C", 20, "700", "Times New Roman", { shadow: true });
-  drawEnhancedText("📜 Official Certificate Authority", 1360, 1010, "#2D3748", 16, "600", "Times New Roman");
-  drawEnhancedText("🎉 Laughter Guaranteed Since 2024", 1360, 1040, "#1A202C", 16, "600", "Times New Roman");
+  drawEnhancedText(`${SITE_NAME}`, 1360, 980, "#1A202C", 20, "700", "Times New Roman", { shadow: true });
+  drawEnhancedText("Official Certificate Authority", 1360, 1010, "#2D3748", 16, "600", "Times New Roman");
+  drawEnhancedText("Laughter Guaranteed Since 2024", 1360, 1040, "#1A202C", 16, "600", "Times New Roman");
 };
 
 // Modern Gradient Design - Enhanced Quality
@@ -504,7 +507,8 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
 
   const drawEnhancedCleanText = (text: string, x: number, y: number, color: string, size: number, weight: string = "normal", effects: any = {}) => {
     ctx.save();
-    ctx.font = `${weight} ${size}px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+    // Better font system for clean design
+    ctx.font = `${weight} ${size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif`;
     ctx.fillStyle = color;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -532,9 +536,9 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
     ctx.restore();
   };
 
-  // Enhanced minimal header with perfect typography
-  drawEnhancedCleanText("🎯 CERTIFICATE OF ACHIEVEMENT 🎯", 800, 240, "#0f172a", 48, "700", { shadow: true, letterSpacing: 2 });
-  drawEnhancedCleanText("✨ Excellence Recognized ✨", 800, 290, "#475569", 22, "500", { shadow: true });
+  // Enhanced minimal header with perfect typography - no emojis
+  drawEnhancedCleanText("CERTIFICATE OF ACHIEVEMENT", 800, 240, "#0f172a", 48, "700", { shadow: true, letterSpacing: 2 });
+  drawEnhancedCleanText("Excellence Recognized", 800, 290, "#475569", 22, "500", { shadow: true });
 
   // Subtle decorative element
   const drawMinimalOrnament = () => {
@@ -562,7 +566,7 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
       shadow: true, 
       letterSpacing: 3 
     });
-    drawEnhancedCleanText("🌟 Certified Professional 🌟", 800, 480, "#6366f1", 24, "600", { shadow: true });
+    drawEnhancedCleanText("Certified Professional", 800, 480, "#6366f1", 24, "600", { shadow: true });
   }
 
   drawEnhancedCleanText("has successfully demonstrated mastery in", 800, 560, "#374151", 28, "500", { shadow: true });
@@ -573,8 +577,8 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
       shadow: true, 
       letterSpacing: 2 
     });
-    drawEnhancedCleanText("🏆 Performance Level: Outstanding 🏆", 800, 700, "#059669", 22, "600", { shadow: true });
-    drawEnhancedCleanText("✅ Status: Officially Awesome ✅", 800, 740, "#7c3aed", 22, "600", { shadow: true });
+    drawEnhancedCleanText("Performance Level: Outstanding", 800, 700, "#059669", 22, "600", { shadow: true });
+    drawEnhancedCleanText("Status: Officially Awesome", 800, 740, "#7c3aed", 22, "600", { shadow: true });
   }
 
   // Enhanced line decoration with gradient
@@ -591,8 +595,8 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
   ctx.stroke();
 
   // Enhanced footer content
-  drawEnhancedCleanText("💼 \"Simplicity is the ultimate sophistication\" 💼", 800, 840, "#64748b", 22, "500", { shadow: true });
-  drawEnhancedCleanText("🎉 Congratulations on this remarkable achievement! 🎉", 800, 880, "#1e293b", 24, "600", { shadow: true });
+  drawEnhancedCleanText("\"Simplicity is the ultimate sophistication\"", 800, 840, "#64748b", 22, "500", { shadow: true });
+  drawEnhancedCleanText("Congratulations on this remarkable achievement!", 800, 880, "#1e293b", 24, "600", { shadow: true });
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     year: "numeric",
@@ -601,9 +605,9 @@ export const generateMinimalistCleanDesign = (name: string, certificateType: Cer
   });
   
   // Enhanced footer with better spacing
-  drawEnhancedCleanText(`📅 Certified: ${currentDate}`, 800, 940, "#64748b", 20, "500");
-  drawEnhancedCleanText(`🏅 Issued by: ${SITE_NAME} 🏅`, 800, 980, "#64748b", 18, "500");
-  drawEnhancedCleanText("✨ Where Excellence Meets Humor ✨", 800, 1020, "#9ca3af", 16, "500");
+  drawEnhancedCleanText(`Certified: ${currentDate}`, 800, 940, "#64748b", 20, "500");
+  drawEnhancedCleanText(`Issued by: ${SITE_NAME}`, 800, 980, "#64748b", 18, "500");
+  drawEnhancedCleanText("Where Excellence Meets Humor", 800, 1020, "#9ca3af", 16, "500");
 };
 
 // Main generator function that selects the appropriate design
